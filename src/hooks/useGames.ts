@@ -6,10 +6,16 @@ export interface Game {
     id: number;
     name: string;
     background_image: string;
+    parent_platforms: { platform: PlatForm }[]
 }
 interface fetchGameResponse {
     count: number;
     results: Game[];
+}
+export interface PlatForm {
+    id: number;
+    name: string;
+    slug: string;
 }
 const useGames = () => {
     const [games, setGame] = useState<Game[]>([]);
